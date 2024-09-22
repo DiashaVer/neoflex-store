@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";  // Импортируем необходимые компоненты для маршрутизации
+import MainPage from './pages/MainPage';  // Импортируем главную страницу приложения
+import Cart from "./pages/Cart";  // Импортируем компонент страницы корзины
+import Consumer from "./pages/Consumer";  // Импортируем компонент страницы потребителя
 
-function App() {
+import Layout from "./components/Layout";  // Импортируем общий макет (layout) для страниц
+
+const App = () => {
+  // Инициализируем сессию с пустым массивом товаров в корзине
+  sessionStorage.setItem("cartProducts", JSON.stringify([]));  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>  {/* Оборачиваем приложение в компонент BrowserRouter для включения маршрутизации */}
+      <Routes>  {/* Определяем все маршруты приложения */}
+        <Route path="/" element={<Layout />}>  {/* Основной маршрут, который использует общий компоновщик Layout */}
+            <Route index element={<MainPage />}></Route>  {/* Главная страница по умолчанию при переходе на корневой путь */}
+            <Route path="/cart" element={<Cart />}></Route>  {/* Маршрут для страницы корзины */}
+        </Route>
+        <Route path="/consumer" element={<Consumer />}></Route>  {/* Отдельный маршрут для страницы потребителя */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App;  // Экспортируем компонент App для использования в других частях приложения

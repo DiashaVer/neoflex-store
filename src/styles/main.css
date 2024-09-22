@@ -1,0 +1,275 @@
+/* Общие стили для всего тела документа */
+body {
+    font-family: Montserrat, sans-serif; /* Шрифт страницы */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    background-color: #EAEAEA; /* Цвет фона страницы */
+}
+
+/* Стили для шапки сайта */
+.header {
+    position: fixed;
+    width: 90%;
+    height: 70px;
+    top: 0;
+    font-family: Montserrat;
+    background: #EAEAEA; /* серый фон для шапки */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+    align-items: center; /* Центрируем элементы по вертикали */
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.header div a {
+    text-decoration: none;
+}
+
+/* Стили для названия магазина QPICK */
+.store-name {
+    cursor: pointer; /* Указатель при наведении мыши */
+    font-family: 'Montserrat', sans-serif; /* Применяем шрифт Montserrat */
+    color: #000000;
+    text-decoration:none;
+}
+
+.content {
+    min-height: calc(100vh - 297px);
+    margin-top: 70px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 0 5% 0 5%;
+}
+
+/* Избранное */
+.favorite-icon {
+    width: 23px;
+    height: 20px;
+}
+
+/* корзина */
+.cart-icon {
+    width: 23px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.item-count { 
+    opacity: 0;
+    position: absolute; /*Абсолютное позиционирование для размещения счетчика*/
+    width: 17px;
+    height: 17px;
+    top: 13px; /*Вертикальное смещение */
+    right: calc(5% - 5px); /*Горизонтальное смещение */
+    background-color: #FFA542 ;/* Цвет фона */
+    color: white; /* Цвет текста */
+    font-size: 10px; /* Размер шрифта для названия товара */
+    align-items: center;
+    border-radius: 50%; /* Круглая форма */
+    display: flex; /*Центрируем текст по горизонтали и вертикали*/
+    justify-content: center;
+    transition: opacity 0.3s; /* Плавный переход для появления */
+}
+
+/* Стили для названия товара - "Наушники" */
+.product-title {
+    font-family: 'Montserrat', sans-serif; /*Шрифт для названия товара*/
+    font-size: 20px; /* Размер шрифта для названия товара */
+    font-weight: 600; /* Жирность шрифта */
+    color: #838383; /* Цвет текста */
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.product-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    min-height: 345px;
+    border-radius: 30px; 
+    box-shadow: 0 2px 10px #EAEAEA; 
+    background-color: #fff; 
+}
+
+.product-image {
+    margin-top: 20px;
+    width: 70%;
+    opacity: 1;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 5%;
+    gap: 10px;
+}
+
+.model-title {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.product-price-active {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    color: #FFA542;
+}
+
+.product-lastprice {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 15px;
+    color: #FFCE7F;
+    text-decoration: line-through; /* Добавляет линию через текст */
+}
+
+.product-info-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-info-foot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-rating {
+    font-family: Montserrat;
+    font-size: 17px;
+    color: #838383;
+    font-weight: 600;
+    align-content: center;
+}
+
+.rating-container {
+    display: flex;
+}
+
+.buy-button {
+    font-family: 'Montserrat', sans-serif; /* Шрифт */
+    color: #000000;                        /* Цвет текста */
+    font-size: 17px;                      /* Размер шрифта */
+    font-weight: 600;                     /* Жирность шрифта */
+    background-color: transparent;        /* Установка фона прозрачным */
+    border: none;                         /* Удаление границы */
+    border-radius: 0;                    /* Установка радиуса границы на 0 (убрать скругление) */
+    cursor: pointer;                      /* Изменение курсора на указатель при наведении */
+}
+
+.footer {
+    margin-top: 30px;
+    margin-left: 5%;
+    border-radius: 30px 30px 0px 0px;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 20px 0;
+    width: 90%; /*Подгоняем ширину, учитывая отступы (205 * 2)*/
+}
+
+.footer-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-name  {
+    margin-left: 30px;
+    font-family: Montserrat;
+    color: #101010;
+}
+
+.footer-content {
+    display: flex; /* Используем флексбокс для создания двух столбцов */
+    justify-content: space-between; /* Распределяем пространство между столбцами */
+    align-items: flex-start; /*Выравнивание по верхнему краю*/
+    width: 50%; /*Указываем ширину для контейнера */
+    gap: 20px;
+    margin: 0 auto; /*Центрируем контейнер*/
+    
+}
+
+.column {
+    gap: 10px; /* Задаем промежуток между элементами, можете изменить при необходимости */
+    text-align: left;
+}
+
+.footer-content a {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    display: block; /* Заставляем ссылки занимать всю ширину */
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    opacity: 1; /* Полная видимость ссылок */
+}
+
+.language-links {
+    display: flex; /* Используем flex для размещения ссылок в одну строку */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+.orange-link {
+    font-size: 15px !important;
+    color: #FFA542 !important; /* Цвет текста для Рус */
+    display: flex; /* Используем flex для выравнивания иконки и текста */
+    flex-direction: row;
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.orange-link img.icon {
+    margin-right: 5px; /* Отступ справа от иконки */
+    vertical-align: middle; /* Выравнивание иконки по центру строки */
+}
+
+.language-links a {
+    font-size: 15px !important;
+    margin-left: 10px; /* Отступ между ссылками */
+}
+
+.messenger-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    gap: 10px; /* Расстояние между иконками */
+}
+
+.messenger-icon {
+    width: 30px; /*Ширина иконки*/
+}
+
+
+/* Мобильные стили */
+@media screen and (max-width: 500px) {
+    .footer-content {
+        width: 100%;
+        justify-content: left;
+        margin-left: 30px;
+    }
+
+    .content {
+        margin-left: 4%;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width: 710px) and (min-width: 501px) {
+    .content {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
