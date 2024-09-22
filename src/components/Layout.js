@@ -24,7 +24,7 @@ const Layout = () => {
             <div className="header">  {/* Контейнер для заголовка страницы */}
                 <div>
                     <Link to="/">  {/* Ссылка на главную страницу */}
-                        <h2 className="store-name">QPICK</h2>  {/* Название магазина */}
+                        <h2 className="store-name" onClick={() => window.scrollTo(0, 0)}>QPICK</h2>  {/* Название магазина */}
                     </Link>
                 </div>
                 <div className="header-icons">  {/* Контейнер для иконок в заголовке */}
